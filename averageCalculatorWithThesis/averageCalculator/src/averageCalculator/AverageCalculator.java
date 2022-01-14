@@ -13,7 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class AverageCalculator implements ActionListener {
+public
+class AverageCalculator implements ActionListener {
    JFrame frame;
    JButton submitGrade, removeLastGrade, gradesSubmitted, submitThesis, resetEverything;
    JLabel currentGrades, revealAverage;
@@ -89,7 +90,11 @@ public class AverageCalculator implements ActionListener {
       float averageWithThesis = (3 * average + thesis) / 4;
       return averageWithThesis;
    }
-   @Override 
+  public void disposeOfFrame() {
+      AverageCalculator AVC = new AverageCalculator();
+      frame.dispose();
+   }
+   @Override
    public void actionPerformed(ActionEvent e) {
       String gradeValue = insertGrade.getText();
       if (e.getSource() == submitGrade) {
@@ -126,6 +131,13 @@ public class AverageCalculator implements ActionListener {
             submitGrade.setVisible(false);
             removeLastGrade.setVisible(false);
             submitThesis.setVisible(true);
+            int checkForThesis = JOptionPane.showConfirmDialog(
+                frame, "Grades average: " + findGradesAverage(grades) + ". Do you have a thesis for this class as well?",
+                "Checking for thesis", JOptionPane.YES_NO_OPTION);
+            System.out.println(checkForThesis);
+            if (checkForThesis == 1 || checkForThesis == -1) {
+               disposeOfFrame();
+            }
          } else {
             JOptionPane.showConfirmDialog(frame, "Input more grades..", "Invalid input", JOptionPane.CLOSED_OPTION);
          }
@@ -153,8 +165,7 @@ public class AverageCalculator implements ActionListener {
       }
 
       if (e.getSource() == resetEverything) {
-         AverageCalculator AVC = new AverageCalculator();
-         frame.dispose();
+         disposeOfFrame();
       }
    }
 }
