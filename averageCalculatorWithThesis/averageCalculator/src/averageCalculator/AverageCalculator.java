@@ -13,14 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public
-class AverageCalculator implements ActionListener {
+public class AverageCalculator implements ActionListener {
    JFrame frame;
    JButton submitGrade, removeLastGrade, gradesSubmitted, submitThesis, resetEverything;
    JLabel currentGrades, revealAverage;
    JTextField insertGrade, insertThesis;
    LinkedList<Integer> grades = new LinkedList<>();
-   Font textFont = new Font("", Font.PLAIN, 20);
+   Font textFont = new Font("Calibri", Font.PLAIN, 20);
    AverageCalculator() {
       submitGrade = new JButton("Submit grade");
       setButtonValues(submitGrade);
