@@ -1,3 +1,4 @@
+<img src = "https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg"></img>
 # Average-Calculator-With-Thesis
 Find out your semestrial average with thesis at a certain class by using this computer!
 I simply had to use 2-3 formulas, most of the code is the button logic really.
