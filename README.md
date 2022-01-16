@@ -1,7 +1,9 @@
 # Average-Calculator-With-Thesis
 Find out your semestrial average with thesis at a certain class by using this computer!
+I simply had to use 2-3 formulas, most of the code is the button logic really.
 
 This code contains major updates in comparison to the others:
+```
 	public void setButtonValues(JButton button) {
 		button.setBackground(Color.white);
 		button.setFont(textFont);
@@ -25,5 +27,5 @@ This code contains major updates in comparison to the others:
 		float averageWithThesis = (3*average+thesis)/4;
 		return averageWithThesis;
 	}
-  
+```
 These functions make the code easier to understand and to manipulate.
